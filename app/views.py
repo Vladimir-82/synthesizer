@@ -9,8 +9,6 @@ LANGUAGE = 'en'
 def index(request):
     if request.method == 'POST':
         action = request.POST['meaning']
-
-
         obj = gTTS(text=action, lang=LANGUAGE, slow=False)
         obj.save("answer.mp3")
         playsound("answer.mp3")
